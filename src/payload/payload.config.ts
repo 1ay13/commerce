@@ -1,4 +1,5 @@
 import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
+import { viteBundler } from "@payloadcms/bundler-vite";
 import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
 import { payloadCloud } from '@payloadcms/plugin-cloud'
 // import formBuilder from '@payloadcms/plugin-form-builder'
@@ -43,7 +44,7 @@ dotenv.config({
 export default buildConfig({
   admin: {
     user: Users.slug,
-    bundler: webpackBundler(), // bundler-config
+    bundler: viteBundler(), // bundler-config
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
