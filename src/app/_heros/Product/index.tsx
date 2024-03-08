@@ -13,8 +13,6 @@ export const ProductHero: React.FC<{
 }> = ({ product }) => {
   const { title, categories, layout, meta: { image: metaImage, description } = {} } = product
 
-
-
   return (
     <Gutter className={classes.productHero}>
       <div className={classes.mediaWrapper}>
