@@ -49,13 +49,13 @@ export const ProductHero: React.FC<{
         <div className={classes.description}>
           <h6>Description</h6>
 
-          {layout[0]?.columns[0]?.richText.map((item, index) => (
+          {/* {layout[0]?.columns[0]?.richText.map((item, index) => (
             <div key={index}>
               {item.children.map((child, childIndex) => (
                 <p key={childIndex}>{child.text}</p>
               ))}
             </div>
-          ))}
+          ))} */}
         </div>
 
         <AddToCartButton product={product} className={classes.addToCartButton} />

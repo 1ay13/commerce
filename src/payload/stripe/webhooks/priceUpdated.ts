@@ -48,7 +48,7 @@ export const priceUpdated: StripeWebhookHandler<{
 
   try {
     // find all stripe prices that are assigned to "payloadProductID"
-    
+
     const stripePrices = await stripe.prices.list({
       product: stripeProductID,
       limit: 100,
