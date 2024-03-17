@@ -13,6 +13,16 @@ export const ProductHero: React.FC<{
 }> = ({ product }) => {
   const { title, categories, layout, meta: { image: metaImage, description } = {} } = product
 
+  const { richText } = layout[0]
+
+  if (!layout[0].richText) {
+    layout[0].columns[0].richText = richText
+  }
+
+  console.log(richText)
+
+  // console.log(layout)
+
   return (
     <Gutter className={classes.productHero}>
       <div className={classes.mediaWrapper}>
@@ -49,14 +59,16 @@ export const ProductHero: React.FC<{
         <div className={classes.description}>
           <h6>Description</h6>
 
-          {/* {layout[0]?.columns[0]?.richText.map((item, index) => (
+          {richText.map((item, index) => (
             <div key={index}>
               {item.children.map((child, childIndex) => (
                 <p key={childIndex}>{child.text}</p>
               ))}
             </div>
-          ))} */}
+          ))}
         </div>
+
+        {/* <p>{layout?.richText}</p> */}
 
         <AddToCartButton product={product} className={classes.addToCartButton} />
       </div>
